@@ -1,8 +1,10 @@
-<script setup></script>
+<script setup>
+defineProps(['image'])
+</script>
 
 <template>
   <div class="container">
-    <img src="" alt="picture">
+    <img :src="{image}" alt="picture">
     <h4>NAME</h4>
     <p>small desc</p>
   </div>

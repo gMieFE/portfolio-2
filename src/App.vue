@@ -12,9 +12,9 @@ import "./assets/main.css";
     <div class="content">
       <h3>No Tailwind</h3>
       <div class="card-container">
-        <GalleryCard />
-        <GalleryCard />
-        <GalleryCard />
+        <GalleryCard :image=""/>
+        <GalleryCard :image=""/>
+        <GalleryCard :image=""/>
       </div>
 
       <h3>Tailwind</h3>

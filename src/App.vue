@@ -2,6 +2,7 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import GalleryCard from "./components/GalleryCard.vue";
+import CRT from "./components/CRT.vue";
 import "./assets/main.css";
 
 const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
@@ -64,6 +65,7 @@ const cards = [
 
     <Footer />
   </div>
+  <CRT />
 </template>
 
 <style scoped>

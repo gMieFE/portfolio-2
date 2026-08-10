@@ -8,9 +8,11 @@ defineProps({
 
 <template>
   <div class="container">
-    <img :src="image" alt="picture">
-    <h4>{{title}}</h4>
-    <p>{{ description }}</p>
+    <img v-if="image" :src="image" :alt="title" />
+
+    <h3 v-if="title">{{ title }}</h3>
+
+    <p v-if="description">{{ description }}</p>
   </div>
 </template>
 

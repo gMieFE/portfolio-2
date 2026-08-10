@@ -5,6 +5,10 @@ import GalleryCard from "./components/GalleryCard.vue";
 import CRT from "./components/CRT.vue";
 import "./assets/main.css";
 
+import { ref } from "vue";
+
+const showTailwind = ref(false);
+
 const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
   eager: true,
   import: "default",
@@ -12,35 +16,78 @@ const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
 
 const images = Object.values(imageModules);
 
+const tailwindImageModules = import.meta.glob("@/assets/img/tailwind/*", {
+  eager: true,
+  import: "default",
+});
+
+const tailwindImages = Object.values(tailwindImageModules);
+
 const cards = [
   {
     image: images[0],
     title: "Mountain",
-    description: "A photo of a snowy mountain"
+    description: "A photo of a snowy mountain",
   },
   {
     image: images[1],
     title: "Forest",
-    description: "A peaceful forest in the morning"
+    description: "A peaceful forest in the morning",
   },
   {
     image: images[2],
     title: "Ocean",
-    description: "Blue waves and a clear sky1"
+    description: "Blue waves and a clear sky1",
   },
   {
     image: images[3],
     title: "Ocean",
-    description: "Blue waves and a clear sky2"
+    description: "Blue waves and a clear sky2",
   },
   {
     image: images[4],
     title: "Ocean",
-    description: "Blue waves and a clear sky3"
-  }
+    description: "Blue waves and a clear sky3",
+  },
+  {
+    image: images[5],
+    title: "",
+    description: "",
+  },
 ];
 
-
+const tailwindCards = [
+  {
+    image: tailwindImages[0],
+    title: "Place H1",
+    description: "",
+  },
+  {
+    image: tailwindImages[1],
+    title: "Place H2",
+    description: "",
+  },
+  {
+    image: tailwindImages[2],
+    title: "Place H2",
+    description: "",
+  },
+  {
+    image: tailwindImages[3],
+    title: "Place H2",
+    description: "",
+  },
+  {
+    image: tailwindImages[4],
+    title: "Place H2",
+    description: "",
+  },
+  {
+    image: tailwindImages[5],
+    title: "Place H2",
+    description: "",
+  },
+];
 </script>
 
 <template>
@@ -48,14 +95,19 @@ const cards = [
     <Header />
     <div class="content">
       <div class="buttons">
-        <button class="tab-button active">No Tailwind</button>
-        <button class="tab-button">Tailwind</button>
+        <button @click="showTailwind = false" class="tab-button" :class="{ active: !showTailwind }">
+          No Tailwind
+        </button>
+        <button @click="showTailwind = true" class="tab-button" :class="{ active: showTailwind }">
+          Tailwind
+        </button>
       </div>
-
       <div class="card-container">
         <GalleryCard
-          v-for="(card, index) in cards"
-          :key="index"
+          v-for="(card, index) in (showTailwind ? tailwindCards : cards).filter(
+            (card) => card.image,
+          )"
+          :key="card.id ?? index"
           :image="card.image"
           :title="card.title"
           :description="card.description"
@@ -69,7 +121,6 @@ const cards = [
 </template>
 
 <style scoped>
-
 .main-body {
   min-height: 100vh;
 
@@ -94,8 +145,6 @@ const cards = [
 
   padding: 16px;
 
-  border: 2px solid #181818;
-
   background-color: #41414175;
 }
 
@@ -107,8 +156,7 @@ const cards = [
 .tab-button {
   width: 250px;
   position: relative;
-  top: 2px;
-  z-index: -1;
+  left: -2px;
 
   background-color: #41414193;
 
@@ -124,8 +172,6 @@ const cards = [
 .tab-button.active {
   border-bottom: none;
   position: relative;
-  top: 2px;
-  z-index: 1;
 
   background-color: #505050;
 }

@@ -8,33 +8,44 @@
 </template>
 
 <style scoped>
-
-.component-body{
+.component-body {
   display: flex;
-  align-items:  center;
+  align-items: center;
   flex-direction: column;
+  text-align: center;
+
+  width: 100vw;
+  height: 170px;
 
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 2;
 
+  color: rgb(255, 255, 255);
 
-  background-color: #292929;
-  color: rgb(185, 185, 185);
-
-  border-top: 2px solid #181818;
 }
 
-.component-body p{
-  margin: 8px 0;
-}
-
-.black-line{
-  background-color: black;
-  height: 70px;
+.component-body p {
   width: 100vw;
+  height: 30%;
+
+
+  font-family: "VT323", monospace;
+  text-shadow:
+    0 0 5px #b1c6dd,
+    0 0 10px #b1c6dd,
+    0 0 20px #b1c6dd,
+    0 0 40px #b1c6dd;
+  font-size: 28px;
+  letter-spacing: 4px;
+
+  border-top: 5px solid #627c97;
 }
 
-
+.black-line {
+  background-color: black;
+  height: 70%;
+  width: 100%;
+}
 </style>

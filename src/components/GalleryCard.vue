@@ -7,9 +7,10 @@ defineProps({
 
 <template>
   <div class="container">
-    <img v-if="image" :src="image" :alt="title" />
 
     <h3 v-if="title">---{{ title }}---</h3>
+    <img v-if="image" :src="image" :alt="title" />
+
 
   </div>
 </template>
@@ -17,32 +18,36 @@ defineProps({
 <style scoped>
 
 .container{
-    width: 250px;
+    width: 300px;
     height: 300px;
+    overflow: hidden;
     
     display: flex;
     flex-direction: column;
-    padding: 8px;
 
     text-align: center;
     text-transform: uppercase;
     color: white;
     font-size: 24px;
-    border: 2px solid white;
 
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.555);
+    background-color: #627c97;
+    box-shadow: 0px 0px 10px #809fc0;
+    border-radius: 5px;
 }
 
 .container h3{
   font-family: 'VT323', monospace;
-  margin-bottom: auto;
+  background-color: #91acc9;
+  height: 15%;
+    text-shadow: 0 0 5px #b1c6dd, 
+               0 0 10px #b1c6dd, 
+               0 0 20px #b1c6dd, 
+               0 0 40px #b1c6dd;
 }
 
 .container img{
-  width: 100%;
-  height: 80%;
+  width: auto;
+  height: 85%;
   object-fit: cover;
-
-  margin-bottom: auto;
 }
 </style>

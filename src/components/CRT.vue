@@ -13,8 +13,8 @@
 
   background: repeating-linear-gradient(
     to bottom,
-    rgba(24, 24, 24, 0.15)  0px,
-    rgba(24, 24, 24, 0.15)  2px,
+    rgba(18, 25, 29, 0.15)  0px,
+    rgba(18, 25, 29, 0.15)  2px,
     transparent 2px,
     transparent 4px
   );
@@ -33,8 +33,8 @@
 
   background: radial-gradient(
     circle at center,
-    rgba(233, 245, 252, 0.2) 0%,
-    rgba(131, 137, 141, 0.2) 50%,
+    rgba(200, 235, 255, 0.2) 0%,
+    rgba(99, 122, 138, 0.2) 50%,
     transparent 100%
   );
 

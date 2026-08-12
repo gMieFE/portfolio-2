@@ -84,10 +84,18 @@ const tailwindCards = [
     <Header />
     <div class="content">
       <div class="buttons">
-        <button @click="showTailwind = false" class="tab-button" :class="{ active: !showTailwind }">
+        <button
+          @click="showTailwind = false"
+          class="tab-button"
+          :class="{ active: !showTailwind }"
+        >
           No Tailwind
         </button>
-        <button @click="showTailwind = true" class="tab-button" :class="{ active: showTailwind }">
+        <button
+          @click="showTailwind = true"
+          class="tab-button"
+          :class="{ active: showTailwind }"
+        >
           Tailwind
         </button>
       </div>
@@ -133,7 +141,8 @@ const tailwindCards = [
 
   padding: 16px;
 
-  background-color: #41414175;
+  background-color: #4d6986;
+  border-radius: 0px 5px 5px 5px;
 }
 
 .buttons {
@@ -144,23 +153,29 @@ const tailwindCards = [
 .tab-button {
   width: 250px;
   position: relative;
-  left: -2px;
 
-  background-color: #41414193;
+  background-color: #3e5c7c;
 
-  border-top: 2px solid #181818;
-  border-left: 2px solid #181818;
-  border-right: 2px solid #181818;
-
-  color: rgb(185, 185, 185);
+  color: rgb(175, 192, 206);
 
   padding: 8px;
+
+  font-family: "VT323", monospace;
+
+  font-size: 16px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .tab-button.active {
   border-bottom: none;
   position: relative;
+  text-shadow:
+    0 0 5px #b1c6dd,
+    0 0 10px #b1c6dd,
+    0 0 15px #b1c6dd,
+    0 0 20px #b1c6dd;
 
-  background-color: #505050;
+  background-color: #4d6986;
+  color: rgb(255, 255, 255);
 }
 </style>

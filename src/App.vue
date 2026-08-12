@@ -27,32 +27,26 @@ const cards = [
   {
     image: images[0],
     title: "Mountain",
-    description: "A photo of a snowy mountain",
   },
   {
     image: images[1],
     title: "Forest",
-    description: "A peaceful forest in the morning",
   },
   {
     image: images[2],
     title: "Ocean",
-    description: "Blue waves and a clear sky1",
   },
   {
     image: images[3],
     title: "Ocean",
-    description: "Blue waves and a clear sky2",
   },
   {
     image: images[4],
     title: "Ocean",
-    description: "Blue waves and a clear sky3",
   },
   {
     image: images[5],
     title: "",
-    description: "",
   },
 ];
 
@@ -60,22 +54,18 @@ const tailwindCards = [
   {
     image: tailwindImages[0],
     title: "Place H1",
-    description: "",
   },
   {
     image: tailwindImages[1],
     title: "Place H2",
-    description: "",
   },
   {
     image: tailwindImages[2],
     title: "Place H2",
-    description: "",
   },
   {
     image: tailwindImages[3],
     title: "Place H2",
-    description: "",
   },
   {
     image: tailwindImages[4],
@@ -85,7 +75,6 @@ const tailwindCards = [
   {
     image: tailwindImages[5],
     title: "Place H2",
-    description: "",
   },
 ];
 </script>
@@ -110,7 +99,6 @@ const tailwindCards = [
           :key="card.id ?? index"
           :image="card.image"
           :title="card.title"
-          :description="card.description"
         />
       </div>
     </div>

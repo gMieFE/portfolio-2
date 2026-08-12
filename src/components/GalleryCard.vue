@@ -2,7 +2,6 @@
 defineProps({
   title: String,
   image: String,
-  description: String
 })
 </script>
 
@@ -10,26 +9,40 @@ defineProps({
   <div class="container">
     <img v-if="image" :src="image" :alt="title" />
 
-    <h3 v-if="title">{{ title }}</h3>
+    <h3 v-if="title">---{{ title }}---</h3>
 
-    <p v-if="description">{{ description }}</p>
   </div>
 </template>
 
 <style scoped>
+
 .container{
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     
     display: flex;
     flex-direction: column;
-    
-    background-color: rgb(182, 182, 182);
+    padding: 8px;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+    border: 2px solid white;
+
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.555);
+}
+
+.container h3{
+  font-family: 'VT323', monospace;
+  margin-bottom: auto;
 }
 
 .container img{
   width: 100%;
-  height: 50%;
+  height: 80%;
   object-fit: cover;
+
+  margin-bottom: auto;
 }
 </style>

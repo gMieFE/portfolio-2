@@ -1,9 +1,17 @@
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+function goToProject() {
+  router.push("/");
+}
+</script>
 
 <template>
   <div class="component-body">
     <div class="black-line"></div>
-    <h2>EXERCISE GALLERY</h2>
+    <h2 @click="$router.push('/')">EXERCISE GALLERY</h2>
   </div>
 </template>
 

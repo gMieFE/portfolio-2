@@ -1,4 +1,6 @@
 <script setup>
+// TODO: research how to make vue props required.
+// Mark props as required if component assumes that they are required or handle cases when props are not passed in.
 defineProps({
   title: String,
   image: String,
@@ -32,7 +34,7 @@ defineProps({
 
     background-color: #627c97;
     box-shadow: 0px 0px 10px #809fc0;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .container h3{

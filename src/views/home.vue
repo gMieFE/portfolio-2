@@ -25,6 +25,8 @@ const tailwindImageModules = import.meta.glob("@/assets/img/tailwind/*", {
 
 const tailwindImages = Object.values(tailwindImageModules);
 
+// TODO: extract tile from image filename. Probably in a loop.
+// look that it gives you: console.log(images);
 const cards = [
   {
     image: images[0],
@@ -52,6 +54,7 @@ const cards = [
   },
 ];
 
+// TODO: extract tile from image filename. Probably in a loop.
 const tailwindCards = [
   {
     image: tailwindImages[0],

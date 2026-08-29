@@ -7,6 +7,8 @@ const router = useRouter();
 
 function goToProject() {
   router.push("/project1");
+  router.push("/project2");
+
 }
 
 const showTailwind = ref(false);
@@ -102,7 +104,7 @@ const tailwindCards = [
         Tailwind
       </button>
     </div>
-    <div class="card-container" @click="$router.push('/project1')">
+    <div class="card-container" >
       <GalleryCard
         v-for="(card, index) in (showTailwind ? tailwindCards : cards).filter(
           (card) => card.image,
@@ -110,6 +112,7 @@ const tailwindCards = [
         :key="card.id ?? index"
         :image="card.image"
         :title="card.title"
+        @click="$router.push(`/project${index + 1}`)"
       />
     </div>
   </div>

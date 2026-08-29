@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "@/views/home.vue";
 import project1 from "@/views/project1.vue";
+import project2 from "@/views/project2.vue";
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +16,10 @@ const router = createRouter({
     {
         path: "/project1",
         component: project1,
+    },
+    {
+        path: "/project2",
+        component: project2,
     },
   ],
 });

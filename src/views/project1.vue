@@ -13,8 +13,6 @@ onMounted(async () => {
   })
 })
 
-
-
 </script>
 
 <template>
@@ -25,17 +23,21 @@ onMounted(async () => {
 
     <div class="code" v-html="highlighted"></div>
   </div>
+  <button @click="$router.push('/')" >BACK</button>
 </template>
 
 <style scoped>
 .container {
-  max-height: 600px;
+  height: 550px;
+  width: 80vw;
+
   display: flex;
   align-items: center;
-  margin: auto;
-  width: 80vw;
+
+
   background-color: #627c97;
   border-radius: 6px;
+
   overflow: hidden;
 }
 
@@ -47,12 +49,18 @@ onMounted(async () => {
 
 .code {
   width: 70%;
-  max-height: 600px;
+  max-height: 100%;
   overflow: auto;
 }
 
 .code :deep(pre) {
   margin: 0;
   padding: 16px;
+}
+
+button{
+  font-family: "VT323", monospace;
+  color: white;
+  font-size: 32px;
 }
 </style>

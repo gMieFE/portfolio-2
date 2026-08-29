@@ -38,8 +38,8 @@ p, h1{
   margin-bottom: 12px;
 }
 .main-body {
-  height: 700px;
-  width: 700px;
+  height: 500px;
+  width: 600px;
 
   display: flex;
   justify-content: center;

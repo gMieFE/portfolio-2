@@ -25,6 +25,8 @@ onMounted(async () => {
 
     <div class="code" v-html="highlighted"></div>
   </div>
+  <button @click="$router.push('/')" >BACK</button>
+
 </template>
 
 <style scoped>
@@ -40,13 +42,12 @@ onMounted(async () => {
 }
 
 .visual {
-  width: 50%;
+  width: auto;
   padding: 16px;
-  /* transform: scale(0.8); */
 }
 
 .code {
-  width: 50%;
+  width: auto;
   max-height: 600px;
   overflow: auto;
 }
@@ -54,5 +55,11 @@ onMounted(async () => {
 .code :deep(pre) {
   margin: 0;
   padding: 16px;
+}
+
+button{
+  font-family: "VT323", monospace;
+  color: white;
+  font-size: 32px;
 }
 </style>

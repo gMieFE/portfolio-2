@@ -33,7 +33,7 @@ import "./assets/main.css";
   flex-direction: column;
 
   max-height: 635px;
-  padding: 24px;
+  padding: 12px;
 }
 
 </style>

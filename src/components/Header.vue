@@ -32,11 +32,6 @@ function goToProject() {
   align-items: center;
   flex-direction: column;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-
   background-color: #627c97;
   color: rgb(255, 255, 255);
 }

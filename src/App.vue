@@ -29,6 +29,7 @@ import "./assets/main.css";
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 
   padding: 24px;

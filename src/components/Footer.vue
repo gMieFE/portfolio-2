@@ -17,11 +17,6 @@
   width: 100vw;
   height: 170px;
 
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-
   color: rgb(255, 255, 255);
 
 }

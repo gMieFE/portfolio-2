@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-function goToProject(){
+function goToProject() {
   router.push("/project1");
 }
 
@@ -85,39 +85,40 @@ const tailwindCards = [
 </script>
 
 <template>
-  <div class="buttons">
-    <button
-      @click="showTailwind = false"
-      class="tab-button"
-      :class="{ active: !showTailwind }"
-    >
-      No Tailwind
-    </button>
-    <button
-      @click="showTailwind = true"
-      class="tab-button"
-      :class="{ active: showTailwind }"
-    >
-      Tailwind
-    </button>
-  </div>
-  <div  
-    class="card-container"
-      @click="$router.push('/project1')"
-    >
-    <GalleryCard
-      v-for="(card, index) in (showTailwind ? tailwindCards : cards).filter(
-        (card) => card.image,
-      )"
-      :key="card.id ?? index"
-      :image="card.image"
-      :title="card.title"
-    />
+  <div>
+    <div class="buttons">
+      <button
+        @click="showTailwind = false"
+        class="tab-button"
+        :class="{ active: !showTailwind }"
+      >
+        No Tailwind
+      </button>
+      <button
+        @click="showTailwind = true"
+        class="tab-button"
+        :class="{ active: showTailwind }"
+      >
+        Tailwind
+      </button>
+    </div>
+    <div class="card-container" @click="$router.push('/project1')">
+      <GalleryCard
+        v-for="(card, index) in (showTailwind ? tailwindCards : cards).filter(
+          (card) => card.image,
+        )"
+        :key="card.id ?? index"
+        :image="card.image"
+        :title="card.title"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .card-container {
+  max-width: 1600px;
+  max-height: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

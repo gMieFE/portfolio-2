@@ -20,8 +20,9 @@ defineProps({
 <style scoped>
 
 .container{
-    width: 300px;
-    height: 300px;
+    width: 15%;
+    min-width: 150px;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     
     display: flex;
@@ -30,7 +31,7 @@ defineProps({
     text-align: center;
     text-transform: uppercase;
     color: white;
-    font-size: 24px;
+    text-size-adjust: auto;
 
     background-color: #627c97;
     box-shadow: 0px 0px 10px #809fc0;

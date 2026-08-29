@@ -117,8 +117,7 @@ const tailwindCards = [
 
 <style scoped>
 .card-container {
-  max-width: 1600px;
-  max-height: 500px;
+  max-width: 1300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

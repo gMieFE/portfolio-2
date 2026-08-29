@@ -18,13 +18,13 @@
   height: 170px;
 
   color: rgb(255, 255, 255);
-
+  border-top: 5px solid #627c97;
 }
 
 .component-body p {
   width: 100vw;
-  height: 30%;
-
+  height: 40%;
+  padding-top: 10px;
 
   font-family: "VT323", monospace;
   text-shadow:
@@ -35,12 +35,13 @@
   font-size: 28px;
   letter-spacing: 4px;
 
-  border-top: 5px solid #627c97;
 }
 
 .black-line {
   background-color: black;
-  height: 70%;
+  height: 60%;
   width: 100%;
 }
 </style>
+
+

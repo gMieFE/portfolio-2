@@ -32,6 +32,7 @@ import "./assets/main.css";
   align-items: center;
   flex-direction: column;
 
+  max-height: 635px;
   padding: 24px;
 }
 

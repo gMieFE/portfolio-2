@@ -1,5 +1,5 @@
 <script setup>
-import omeletteImage from "../public/img/image-omelette.jpeg";
+import omeletteImage from "./img/recipe-page-main-img/image-omelette.jpeg";
 
 const prepTime = [
   { label: "Total", value: "10 minutes" },

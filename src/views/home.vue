@@ -5,12 +5,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-function goToProject() {
-  router.push("/project1");
-  router.push("/project2");
-
-}
-
 const showTailwind = ref(false);
 
 const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
@@ -18,72 +12,25 @@ const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
   import: "default",
 });
 
-const images = Object.values(imageModules);
+const images = Object.entries(imageModules).map(([path, src]) => ({
+  name: path.split("/").pop().replace(/\.[^/.]+$/, ""),
+  src,
+}));
 
-const tailwindImageModules = import.meta.glob("@/assets/img/tailwind/*", {
-  eager: true,
-  import: "default",
-});
+// const tailwindImageModules = import.meta.glob("@/assets/img/tailwind/*", {
+//   eager: true,
+//   import: "default",
+// });
 
-const tailwindImages = Object.values(tailwindImageModules);
+// const tailwindImages = Object.entries(tailwindImageModules).map(
+//   ([path, src]) => ({
+//     name: path.split("/").pop().replace(/\.[^/.]+$/, ""),
+//     src,
+//   })
+// );
 
 // TODO: extract tile from image filename. Probably in a loop.
 // look that it gives you: console.log(images);
-const cards = [
-  {
-    image: images[0],
-    title: "Mountain",
-  },
-  {
-    image: images[1],
-    title: "Forest",
-  },
-  {
-    image: images[2],
-    title: "Ocean",
-  },
-  {
-    image: images[3],
-    title: "Ocean",
-  },
-  {
-    image: images[4],
-    title: "Ocean",
-  },
-  {
-    image: images[5],
-    title: "",
-  },
-];
-
-// TODO: extract tile from image filename. Probably in a loop.
-const tailwindCards = [
-  {
-    image: tailwindImages[0],
-    title: "Place H1",
-  },
-  {
-    image: tailwindImages[1],
-    title: "Place H2",
-  },
-  {
-    image: tailwindImages[2],
-    title: "Place H2",
-  },
-  {
-    image: tailwindImages[3],
-    title: "Place H2",
-  },
-  {
-    image: tailwindImages[4],
-    title: "Place H2",
-    description: "",
-  },
-  {
-    image: tailwindImages[5],
-    title: "Place H2",
-  },
-];
 </script>
 
 <template>
@@ -94,25 +41,23 @@ const tailwindCards = [
         class="tab-button"
         :class="{ active: !showTailwind }"
       >
-        No Tailwind
+        PROJECTS
       </button>
-      <button
+      <!-- <button
         @click="showTailwind = true"
         class="tab-button"
         :class="{ active: showTailwind }"
       >
         Tailwind
-      </button>
+      </button> -->
     </div>
-    <div class="card-container" >
+    <div class="card-container">
       <GalleryCard
-        v-for="(card, index) in (showTailwind ? tailwindCards : cards).filter(
-          (card) => card.image,
-        )"
-        :key="card.id ?? index"
-        :image="card.image"
-        :title="card.title"
-        @click="$router.push(`/project${index + 1}`)"
+        v-for="(card, index) in showTailwind ? tailwindImages : images"
+        :key="card.name ?? index"
+        :image="card.src ?? card"
+        :title="card.name ?? ''"
+        @click="$router.push(`/Project${index + 1}`)"
       />
     </div>
   </div>

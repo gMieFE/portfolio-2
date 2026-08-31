@@ -3,7 +3,7 @@
 <template>
   <div class="main-container">
     <div class="card">
-      <img src="../img/avatar-jessica.jpeg" alt="" />
+      <img src="./img/social-links-profile-main-img/avatar-jessica.jpeg" alt="Jessica-photo" />
       <h2 style="font-weight: 700;">Jessica Randall</h2>
       <p style="font-weight: 600; color: hsl(75, 94%, 57%);">London, United Kingdom</p>
       <p style="font-weight: 300;">"Front-end developer and avid reader."</p>
@@ -23,8 +23,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 1440px;
 }
 
 .card {

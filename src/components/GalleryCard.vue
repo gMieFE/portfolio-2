@@ -45,6 +45,7 @@ defineProps({
                0 0 10px #b1c6dd, 
                0 0 20px #b1c6dd, 
                0 0 40px #b1c6dd;
+  letter-spacing: 3px;
 }
 
 .container img{

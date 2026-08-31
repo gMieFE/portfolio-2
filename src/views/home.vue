@@ -13,7 +13,10 @@ const imageModules = import.meta.glob("@/assets/img/no-tailwind/*", {
 });
 
 const images = Object.entries(imageModules).map(([path, src]) => ({
-  name: path.split("/").pop().replace(/\.[^/.]+$/, ""),
+  name: path
+    .split("/")
+    .pop()
+    .replace(/\.[^/.]+$/, ""),
   src,
 }));
 
@@ -60,10 +63,22 @@ const images = Object.entries(imageModules).map(([path, src]) => ({
         @click="$router.push(`/Project${index + 1}`)"
       />
     </div>
+    <h3>EXERCISES FROM www.frontendmentor.io</h3>
   </div>
 </template>
 
 <style scoped>
+
+h3{
+  font-family: "VT323", monospace;
+  text-shadow:
+    0 0 5px #b1c6dd,
+    0 0 10px #b1c6dd,
+    0 0 20px #b1c6dd,
+    0 0 40px #b1c6dd;
+    color: white;
+    letter-spacing: 5px;
+}
 .card-container {
   max-width: 1300px;
   display: flex;
@@ -93,7 +108,7 @@ const images = Object.entries(imageModules).map(([path, src]) => ({
   padding: 8px;
 
   font-family: "VT323", monospace;
-
+  letter-spacing: 3px;
   font-size: 16px;
   border-radius: 5px 5px 0px 0px;
 }

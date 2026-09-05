@@ -78,6 +78,7 @@ h3{
     0 0 40px #b1c6dd;
     color: white;
     letter-spacing: 5px;
+    text-transform: uppercase;
 }
 .card-container {
   max-width: 1300px;
